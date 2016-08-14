@@ -1,0 +1,51 @@
+<div layout="column" ng-cloak class="md-inline-form">
+
+  <md-content layout-padding md-theme="docs-dark">
+	<h1>Consumo</h1>
+
+    <div section ng-controller="consumoController" ng-init="findOne()">
+      <form name="consumoForm">
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>¿Cómo es tu alimentación?</label>
+            <md-select ng-model="article.p4" required md-no-asterisk name="alimentacion">
+              <md-option value="1">Vegana</md-option>
+              <md-option value="2">Vegetariana</md-option>
+              <md-option value="3">Omnivora</md-option>
+            </md-select>
+            <div ng-messages="consumoForm.alimentacion.$error">
+          		<div ng-message="required">Es Requerido.</div>
+        	</div>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>¿Con que frecuencia compras ropa?</label>
+            <md-select ng-model="article.p5" required md-no-asterisk name="ropa">
+              <md-option value="3">Cada 6 meses</md-option>
+              <md-option value="2">Cada año</md-option>
+              <md-option value="1">Cada dos años o más</md-option>
+            </md-select>
+            <div ng-messages="consumoForm.ropa.$error">
+          		<div ng-message="required">Es Requerido.</div>
+        	</div>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>¿En que tipo de vivienda habitas?</label>
+            <md-select ng-model="article.p6" required md-no-asterisk name="vivienda">
+              <md-option  value="1">Ecológicas (barro, madera)</md-option>
+              <md-option  value="2">Tendinoso, Prefafricada</md-option>
+              <md-option  value="3">Ladrillo y Cemento</md-option>
+            </md-select>
+            <div ng-messages="consumoForm.vivienda.$error">
+          		<div ng-message="required">Es Requerido.</div>
+        	</div>
+          </md-input-container>
+        
+        </div>
+        
+      </form>
+      <md-button class="md-primary md-hue-1"  ng-disabled="consumoForm.$invalid" ng-click="update()">siguiente</md-button>
+    </div>
+  </md-content>
+</div>

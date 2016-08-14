@@ -1,0 +1,36 @@
+
+html
+  head
+    link(href='https://fonts.googleapis.com/css?family=Monserrat|Oleo+Script' rel='stylesheet' type='text/css')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' type='text/css')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.js')
+    // Usar la propiedad 'title' para renderizar un título de página
+    title
+  body
+    section(ng-view)
+    if !user
+      p Welcome! Please 
+        a(href='/signin') Signin
+        div
+          a.prueba button
+    else
+      p Hello,  #{user.username}. View your 
+        a(href='/profile') profile
+		div
+			a(href="/quest-home/#{user.username}") inicia cuestionario
+    script(type='text/javascript', src='/articles/articles.client.module.js')
+    script(type='text/javascript', src='/articles/controllers/articles.client.controller.js')
+    script(type='text/javascript', src='/articles/services/articles.client.service.js')
+    script(type='text/javascript', src='/articles/config/articles.client.routes.js')
+    script(type='text/javascript', src='/example/example.client.module.js')
+    script(type='text/javascript', src='/example/controllers/example.client.controller.js')
+    script(type='text/javascript', src='/example/config/example.client.routes.js')
+    script(type='text/javascript', src='/users/users.client.module.js')
+    script(type='text/javascript', src='/users/services/authentication.client.service.js')
+    script(type='text/javascript', src='/cuestionario/cuestionario.module.js')
+    script(type='text/javascript', src='/cuestionario/controllers/cuestionario.controller.js')
+    script(type='text/javascript', src='/cuestionario/services/cuestionario.services.js')
+    script(type='text/javascript', src='/cuestionario/config/cuestionario.routes.js')
+    script(type='text/javascript', src='/application.js')

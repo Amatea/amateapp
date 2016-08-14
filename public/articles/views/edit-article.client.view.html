@@ -1,0 +1,54 @@
+<nav class="header-hogar">
+  <div class="ico-hogar"></div>
+</nav>
+<!-- La view editar artículo -->
+<div layout="column" ng-cloak class="md-inline-form">
+	<md-content layout-padding>
+		<h1 class="h1-hogar">Hogar</h1>
+		<span class="text-hogar">Puedes reducir tu Huella en tu casa por poco o ningun costo a través de cambios en tus habitos,
+  la conservación y el uso de la energia, el agua más eficiente </span>
+		<section ng-controller="ArticlesController" ng-init="findOne()">
+			<!-- Formulario editar artículo -->
+			<form name="hogarForm"  novalidate>
+				<div layout-gt-sm="row">
+					<md-input-container class="md-block" flex-gt-sm>
+						<label>¿Con cuantas personas vives?</label>
+						<md-select ng-model="article.p1" required md-no-asterisk name="personas">
+              <md-option value="1">Vivo solo(a)</md-option>
+              <md-option value="2">1</md-option>
+              <md-option value="3">2</md-option>
+              <md-option value="4">3</md-option>
+              <md-option value="5">4</md-option>
+              <md-option value="6">Más de 5</md-option>
+            </md-select>
+						<div ng-messages="hogarForm.personas.$error">
+          		<div ng-message="required">Es Requerido.</div>
+						</div>
+					</md-input-container>
+					<md-input-container class="md-block" flex-gt-sm>
+            <label>¿Qué tipo de iluminacion usas?</label>
+            <md-select ng-model="article.p2" required md-no-asterisk name="iluminacion">
+              <md-option value="3">Normal</md-option>
+              <md-option value="2">Ahorrador</md-option>
+              <md-option value="1">LED</md-option>
+            </md-select>
+            <div ng-messages="hogarForm.iluminacion.$error">
+          		<div ng-message="required">Es Requerido.</div>
+        		</div>
+          </md-input-container>
+					<md-input-container class="md-block" flex-gt-sm>
+            <label>¿Desconectas los aparatos eléctricos antes de salir de casa?</label>
+            <md-select ng-model="article.p3" required md-no-asterisk name="desconectar">
+              <md-option  value="1">Si</md-option>
+              <md-option  value="2">No</md-option>
+            </md-select>
+            <div ng-messages="hogarForm.desconectar.$error">
+          		<div ng-message="required">Es Requerido.</div>
+        		</div>
+          </md-input-container>
+				</div>
+			</form>
+			<md-button class="md-primary md-hue-1" ng-disabled="hogarForm.$invalid" ng-click="update()">siguiente</md-button>
+		</section>
+	</md-content>
+</div>

@@ -1,0 +1,16 @@
+<h2>Resultado ::</h2>
+<div>
+	<h3>Gracias {{dato.nombre}}</h3>
+	<p></p>
+	<p>puntos :: {{total2()}}</p>
+	<form name="calculoForm">
+    	<label>Debes Sembrar {{total()}} árboles este año.</label>
+    	<div layout="row">
+    		<div>
+    			<p><md-checkbox ng-model="dato.arboles"  aria-label="{{total()}}"  ng-true-value="{{total()}}" required md-no-asterisk></md-checkbox>estoy de acuerdo</p>
+    		</div>
+    	</div>
+   	</form>
+   	<md-button class="md-primary md-hue-1" ng-disabled="calculoForm.$invalid" ng-click="addArbol()">Continuar</md-button>
+  </div>
+</div>
