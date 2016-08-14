@@ -49,6 +49,14 @@ module.exports = function(app) {
     successRedirect: '/'
   }));
 
+  // Configurar las rutas Facebook
+
+  app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'email' ] }));
+  app.get('/auth/facebook/callback', passport.authenticate('facebook',{ 
+    successRedirect: '/', 
+    failureRedirect: '/signin' 
+  }));
+
   //Configurar la route 'signout'
   app.get('/signout', articles.signout);
 
