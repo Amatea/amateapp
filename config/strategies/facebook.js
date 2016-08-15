@@ -22,11 +22,10 @@ module.exports = function() {
       lastName: profile.name.familyName,
       fullName: profile.displayName,
       email: profile.emails[0].value,
-      picture: profile.photos[0].value,
       username: profile.username,
       provider: 'facebook',
       providerId: profile.id,
-      providerData: providerData
+      providerData:{picture: profile.photos[0].value}
     };
 
     users.saveOAuthUserProfile(req, providerUserProfile, done);

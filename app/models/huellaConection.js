@@ -21,8 +21,7 @@ var ArticleSchema = new Schema({
   p10: { type: Number, default: '' },
   p11: { type: Number, default: '' },
   totalTrees: { type: Number, default: '' },
-  
-  avatar: { type: String, default: 'avatar.jpg' },
+
   firstName: String,
   lastName: String,
   email: {
@@ -58,7 +57,7 @@ var ArticleSchema = new Schema({
   },
   providerId: String,
   providerData: {
-    picture: { type: String, default: "avatar.jpg"}
+    picture: { type: String, default: 'avatar.jpg'}
   },
   created: {
     type: Date,
