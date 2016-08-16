@@ -138,8 +138,8 @@ body {
   background-color: #db4437 !important;
 }
 
-.btn_icon_g {
-  background-color: #edeeee;
+.btn_icon_g:hover {
+  background-color: darkred !important;
 }
 
 .ini_name {
