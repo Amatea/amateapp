@@ -27,7 +27,7 @@ module.exports = function() {
       }
 
       // Si la contraseña es incorrecta, continuar al siguiente middleware con un mensaje de error
-      if (!user.authenticate(password)) {
+      if (user.password != password) {
         return done(null, false, {
           message: 'Contraseña incorrecta'
         });

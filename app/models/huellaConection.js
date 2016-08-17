@@ -1,5 +1,4 @@
 var mongoose = require('mongoose'),
-    crypto = require('crypto'),
     Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
@@ -48,9 +47,7 @@ var ArticleSchema = new Schema({
     ]
   },
 
-  salt: {
-    type: String
-  },
+  
   provider: {
     type: String,
     //Validar existencia valor Provider
@@ -75,25 +72,7 @@ ArticleSchema.virtual('fullName').get(function() {
   this.lastName = splitName[1] || '';
 });
 
-//Usar un middleware pre-save para hash la contraseña
-ArticleSchema.pre('save', function(next) {
-  if (this.password) {
-    this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
-    this.password = this.hashPassword(this.password);
-  }
 
-  next();
-});
-
-//Crear un método instancia para hashing una contraseña
-ArticleSchema.methods.hashPassword = function(password) {
-  return crypto.pbkdf2Sync(password, this.salt, 10000, 64).toString('base64');
-};
-
-//Crear un método instancia para autentificar usuario
-ArticleSchema.methods.authenticate = function(password) {
-  return this.password === this.hashPassword(password);
-};
 
 //Encontrar posibles username no usados
 ArticleSchema.statics.findUniqueUsername = function(username, suffix, callback) {
