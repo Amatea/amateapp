@@ -2,19 +2,14 @@
 angular.module('articles').controller('calculoController', ['$scope', '$routeParams', '$location', 'Authentication', 'Articles',
     function($scope, $routeParams, $location, Authentication, Articles) {
 
-      $scope.articles = Articles.query();
-
-     
-      
-            
-       $scope.findOne = function() {
-            // Usar el método 'get' de article para enviar una petición GET apropiada
+        // Usar el método 'get' de article para enviar una petición GET apropiada
             $scope.article = Articles.get({
-                id: $routeParams.articleId
+                articleId: $routeParams.articleId
             });
-        };
+    
 
-        $scope.num1 = function(){
+        $scope.total3 = function(){
+          var total = [];
           angular.forEach($scope.article, function(item){
             return item.p1
           }

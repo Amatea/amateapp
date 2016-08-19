@@ -2,10 +2,16 @@
 <div>
 	
 	<p></p>
-	<p>puntos :: {{total2()}}</p>
-	<div ng-controller="calculoController" ng-init="findOne()">
+	
+	<div ng-controller="calculoController" >
 		<h3>Gracias {{article.firstName}}</h3>
+		<p>total :: {{total3()}}</p>
+		
+		<div>
+            <img class="avatar" src="{{article.providerData.picture}}" alt="">
+          </div>
 		<h3>total {{total2()}}</h3>
+	
 		
 		<form name="calculoForm">
 				<label>Debes Sembrar {{total()}} árboles este año.</label>
