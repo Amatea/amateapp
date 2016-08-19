@@ -9,6 +9,7 @@ angular.module('articles').factory('Articles', ['$resource', function($resource)
     }, {
         update: {
             method: 'PUT'
-        }
+        },
+        
     });
 }]);

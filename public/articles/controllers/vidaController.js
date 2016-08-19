@@ -44,7 +44,7 @@ angular.module('articles').controller('vidaController', ['$scope', '$routeParams
             // Usar el método '$update' de article para enviar una petición PUT apropiada
             $scope.article.$update(function() {
                 // Si un article fue actualizado de modo correcto, redirigir el user a la página del article 
-                $location.path('articles/calculo/' + $scope.article._id);
+                $location.path('articles/calculo/' + $routeParams.articleId);
             }, function(errorResponse) {
                 // En otro caso, presenta al user un mensaje de error
                 $scope.error = errorResponse.data.message;

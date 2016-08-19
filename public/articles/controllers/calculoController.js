@@ -2,19 +2,30 @@
 angular.module('articles').controller('calculoController', ['$scope', '$routeParams', '$location', 'Authentication', 'Articles',
     function($scope, $routeParams, $location, Authentication, Articles) {
 
-  
+      $scope.articles = Articles.query();
+
+     
+      
+            
+       $scope.findOne = function() {
             // Usar el método 'get' de article para enviar una petición GET apropiada
             $scope.article = Articles.get({
-                articleId: $routeParams.articleId
+                id: $routeParams.articleId
             });
-        
-        
-	
+        };
 
+        $scope.num1 = function(){
+          angular.forEach($scope.article, function(item){
+            return item.p1
+          }
+          )}
+      
+        
+        
   // Crear un nuevo método controller para actualizar un único article
         $scope.addArbol = function() {
             // Usar el método '$update' de article para enviar una petición PUT apropiada
-            $scope.article.$update(function() {
+            $scope.article.update(function() {
                 // Si un article fue actualizado de modo correcto, redirigir el user a la página del article 
                 $location.path('/' + $scope.article._id);
             }, function(errorResponse) {
@@ -56,24 +67,16 @@ angular.module('articles').controller('calculoController', ['$scope', '$routePar
 
       }
       
-      $scope.guardar = function () {
-        var huellas = $scope.huella;
-        $scope.huella = [];
-          angular.forEach(huellas, function(arbol) {
-                $scope.huella.push(arbol);
-            });
-      };
 
 
       $scope.total2 = function(){
       var total = 0;
-      angular.forEach($scope.huella, function(item){
+      angular.forEach($scope.article, function(item){
         total = item.p1+item.p2+item.p3+item.p4+item.p5+item.p6+item.p7+item.p8+item.p9+item.p10+item.p11;
       })
 
       return total;
     }
     
-
     }
 ]);
