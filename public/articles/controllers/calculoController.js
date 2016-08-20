@@ -1,26 +1,21 @@
 // Crear el controller 'articles'
-angular.module('articles').controller('calculoController', ['$scope', '$routeParams', '$location', 'Authentication', 'Articles',
-    function($scope, $routeParams, $location, Authentication, Articles) {
-
-        // Usar el método 'get' de article para enviar una petición GET apropiada
-            $scope.article = Articles.get({
-                articleId: $routeParams.articleId
-            });
-    
-
-        $scope.total3 = function(){
-          var total = [];
-          angular.forEach($scope.article, function(item){
-            return item.p1
-          }
-          )}
+angular.module('articles').controller('calculoController', ['$scope', '$routeParams', '$location', 'Articles',
+    function($scope, $routeParams, $location, Articles) {
       
-        
-        
+      $scope.article = Articles.get({
+              articleId: $routeParams.articleId
+            })
+  
+        $scope.findOne = [
+          $scope.article = Articles.get({
+              articleId: $routeParams.articleId
+            })
+          ];
+
   // Crear un nuevo método controller para actualizar un único article
         $scope.addArbol = function() {
             // Usar el método '$update' de article para enviar una petición PUT apropiada
-            $scope.article.update(function() {
+            $scope.article.$update(function() {
                 // Si un article fue actualizado de modo correcto, redirigir el user a la página del article 
                 $location.path('/' + $scope.article._id);
             }, function(errorResponse) {
@@ -31,7 +26,7 @@ angular.module('articles').controller('calculoController', ['$scope', '$routePar
 
   $scope.total = function() {
           var total = [];
-          angular.forEach($scope.article, function(item) {
+          $scope.findOne.forEach(function(item) {
               total = item.p1+item.p2+item.p3+item.p4+item.p5+item.p6+item.p7+item.p8+item.p9+item.p10+item.p11;
           })
 
@@ -63,10 +58,9 @@ angular.module('articles').controller('calculoController', ['$scope', '$routePar
       }
       
 
-
       $scope.total2 = function(){
       var total = 0;
-      angular.forEach($scope.article, function(item){
+      $scope.findOne.forEach( function(item){
         total = item.p1+item.p2+item.p3+item.p4+item.p5+item.p6+item.p7+item.p8+item.p9+item.p10+item.p11;
       })
 

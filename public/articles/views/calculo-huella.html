@@ -4,12 +4,17 @@
 	<p></p>
 	
 	<div ng-controller="calculoController" >
+		<div ng-repeat="a in obtener">
+			
+			<li>{{a.firstName}}</li>
+			<li>{{total()}}</li>
+		</div>
 		<h3>Gracias {{article.firstName}}</h3>
+		<h3>Gracias {{article.p3}}</h3>
 		<p>total :: {{total3()}}</p>
+		<p>total4 :: {{total4()}}</p>
 		
-		<div>
-            <img class="avatar" src="{{article.providerData.picture}}" alt="">
-          </div>
+		
 		<h3>total {{total2()}}</h3>
 	
 		
