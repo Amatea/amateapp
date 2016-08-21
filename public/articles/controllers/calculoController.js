@@ -1,10 +1,12 @@
 // Crear el controller 'articles'
 angular.module('articles').controller('calculoController', ['$scope', '$routeParams', '$location', 'Articles',
     function($scope, $routeParams, $location, Articles) {
-      
-      $scope.article = Articles.get({
+        
+        $scope.unique = function () {
+          $scope.articles = Articles.get({
               articleId: $routeParams.articleId
             })
+        }
   
         $scope.findOne = [
           $scope.article = Articles.get({
@@ -54,18 +56,15 @@ angular.module('articles').controller('calculoController', ['$scope', '$routePar
           else{
             return 6
           }
-
       }
       
 
       $scope.total2 = function(){
-      var total = 0;
+      var total = [];
       $scope.findOne.forEach( function(item){
         total = item.p1+item.p2+item.p3+item.p4+item.p5+item.p6+item.p7+item.p8+item.p9+item.p10+item.p11;
       })
-
       return total;
-    }
-    
-    }
+        }
+      }
 ]);

@@ -1,32 +1,18 @@
 <h2>Resultado ::</h2>
 <div>
-	
-	<p></p>
-	
 	<div ng-controller="calculoController" >
-		<div ng-repeat="a in obtener">
-			
-			<li>{{a.firstName}}</li>
-			<li>{{total()}}</li>
-		</div>
 		<h3>Gracias {{article.firstName}}</h3>
-		<h3>Gracias {{article.p3}}</h3>
-		<p>total :: {{total3()}}</p>
-		<p>total4 :: {{total4()}}</p>
-		
 		
 		<h3>total {{total2()}}</h3>
-	
-		
 		<form name="calculoForm">
-				<label>Debes Sembrar {{total()}} árboles este año.</label>
-				<div layout="row">
-					<div>
-						<p><md-checkbox ng-model="article.totalTrees"  aria-label="{{total()}}"  ng-true-value="{{total()}}" required md-no-asterisk></md-checkbox>estoy de acuerdo</p>
-					</div>
+			<label>Debes Sembrar {{total()}} árboles este año.</label>
+			<div layout="row">
+				<div>
+					<p><md-checkbox ng-model="article.totalTrees"  aria-label="{{total()}}"  ng-true-value="{{total()}}" required md-no-asterisk></md-checkbox>estoy de acuerdo</p>
 				</div>
-			</form>
-			<md-button class="md-primary md-hue-1" ng-disabled="calculoForm.$invalid" ng-click="addArbol()">Continuar</md-button>
-	</div>
+			</div>
+		</form>
+		<md-button class="md-primary md-hue-1" ng-disabled="calculoForm.$invalid" ng-click="addArbol()">Continuar</md-button>
+
 	</div>
 </div>
