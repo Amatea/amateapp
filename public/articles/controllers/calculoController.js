@@ -65,8 +65,13 @@ angular.module('articles')
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
-        fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        
       })
+      .then(function(answer) {
+      $scope.status = 'Tu informción fue enviada "' + answer + '".';
+        }, function() {
+          $scope.status = 'Has cancelado el dialogo.';
+        });
   };
 
   function CheckoutController($scope, Articles, $location,  $routeParams, $mdDialog, totalAmount, article) {
@@ -84,6 +89,13 @@ angular.module('articles')
                 $scope.error = errorResponse.data.message;
             });
         };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
     
   }
 
