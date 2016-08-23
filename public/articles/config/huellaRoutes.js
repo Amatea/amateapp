@@ -8,6 +8,9 @@ angular.module('articles').config(['$routeProvider',
 		when('/articles/transporte/:articleId', {
 			templateUrl: 'articles/views/transporte.html'
 		}).
+		when('/arboles/', {
+			templateUrl: 'articles/views/arboles.html'
+		}).
 		when('/articles/vida/:articleId', {
 			templateUrl: 'articles/views/vida.html'
 		}).
