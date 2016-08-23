@@ -1,11 +1,9 @@
 // Crear el controller 'articles'
 angular.module('articles')
 
-.controller('calculoController', ['$scope', '$routeParams', '$location', 'Articles', '$modal', '$mdDialog',
-    function($scope, $routeParams, $location, Articles, $modal, $mdDialog) {
-    $scope.status = '  ';
-  $scope.customFullscreen = false;
-
+.controller('calculoController', ['$scope', '$routeParams', 'Articles', '$mdDialog',
+    function($scope, $routeParams, Articles, $mdDialog) {
+    
     $scope.findOne = [
       $scope.article = Articles.get({
           articleId: $routeParams.articleId
@@ -52,30 +50,30 @@ angular.module('articles')
       return total;
         }
 
+    $scope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: CheckoutController,
+        templateUrl: 'articles/views/arboles.html',
+        resolve: {
+              totalAmount: function () {
+                return $scope.total;
+              },
+              article: function () {
+                return $scope.article;
+              }
+            },
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+        fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+      })
+  };
 
-      $scope.checkout = function () {
-        $modal.open({
-          templateUrl: 'articles/views/arboles.html',
-          controller: 'CheckoutController',
-          resolve: {
-            totalAmount: $scope.total,
-            article: $scope.article
-				  }
-			});
-		};
+  function CheckoutController($scope, Articles, $location,  $routeParams, $mdDialog, totalAmount, article) {
+    $scope.totalAmount = totalAmount();
+    $scope.article = article;
 
-
-
-
-}])
-
-.controller('CheckoutController', ['$scope', '$routeParams', '$location', 'Articles', 'totalAmount', 'article',
-    function($scope, $routeParams, $location, Articles, totalAmount, article) {
-
-      $scope.totalAmount = totalAmount;
-      $scope.article = article;
-
-      $scope.article = Articles.get({
+    $scope.article = Articles.get({
               articleId: $routeParams.articleId
             })
       
@@ -86,5 +84,7 @@ angular.module('articles')
                 $scope.error = errorResponse.data.message;
             });
         };
-        
-}]);
+    
+  }
+
+}])

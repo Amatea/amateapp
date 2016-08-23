@@ -6,7 +6,7 @@ var mainApplicationModule = angular.module(mainApplicationModuleName, [
   'ngMaterial', 
   'ngMessages',
   'ngAnimate',
-  'mm.foundation', 'ngAnimate',
+  'ngAnimate',
   'users',
   'example',
   'articles'
