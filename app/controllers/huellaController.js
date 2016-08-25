@@ -158,16 +158,29 @@ exports.renderSignup = function(req, res, next) {
 
 // Crear un nuevo método controller que crea nuevos users 'regular'
 exports.signup = function(req, res, next) {
+  
+  if (!req.user) {
 
-  Article.register(new Article({username: req.body.username}), req.body.password, function(err) {
-    if (err) {
-      console.log('error while user register!', err);
-      return next(err);
-    }
+    var user = Article.register(new Article({ 
+        username: req.body.username, 
+        provider: 'local'
+      }), req.body.password, function(err) {
+        if (err) {
+          return res.render('signup', { title: 'Registrate:: ', messages: req.flash('error')});
+        }
+        passport.authenticate('local')(req, res, function () {
+            req.session.save(function (err) {
+                if (err) {
+                    return next(err);
+                }
+                res.redirect('/');
+            });
+        });
 
-    res.redirect('/');
-  });
-};
+      });
+      
+    };
+}
 
 // Crear un nuevo método controller que crea nuevos usuarios 'OAuth'
 exports.saveOAuthUserProfile = function(req, profile, done) {
