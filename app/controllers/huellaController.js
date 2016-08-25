@@ -159,9 +159,7 @@ exports.renderSignup = function(req, res, next) {
 // Crear un nuevo método controller que crea nuevos users 'regular'
 exports.signup = function(req, res, next) {
   
-  if (!req.user) {
-
-    var user = Article.register(new Article({ 
+    Article.register(new Article({ 
         username: req.body.username, 
         provider: 'local'
       }), req.body.password, function(err) {
@@ -177,10 +175,9 @@ exports.signup = function(req, res, next) {
             });
         });
 
-      });
-      
-    };
-}
+      });  
+};
+
 
 // Crear un nuevo método controller que crea nuevos usuarios 'OAuth'
 exports.saveOAuthUserProfile = function(req, profile, done) {
