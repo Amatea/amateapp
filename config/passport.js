@@ -11,18 +11,8 @@ module.exports = function() {
   var Articles = mongoose.model('Article');
   
   //Usar el método 'serializeUser' para serializar la id del usuario
-  passport.serializeUser(function(user, done) {
-    done(null, user.id);
-  });
-
-  //Usar el método 'deserializeUser' para cargar el documento user
-  passport.deserializeUser(function(id, done) {
-    Articles.findOne({
-      _id: id
-    }, '-password -salt', function(err, user) {
-      done(err, user);
-    });
-  });
+  passport.serializeUser(Articles.serializeUser());
+passport.deserializeUser(Articles.deserializeUser());
 
   //Cargar los archivos de configuración de estrategias de Passport
   require('./strategies/local.js')();

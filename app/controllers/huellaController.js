@@ -8,13 +8,29 @@ var mongoose = require('mongoose'),
 
 // Crear un nuevo método controller para el manejo de errores
 var getErrorMessage = function(err) {
-	if (err.errors) {
-		for (var errName in err.errors) {
-			if (err.errors[errName].message) return err.errors[errName].message;
-		}
-	} else {
-		return 'Error de servidor desconocido';
-	}
+
+  var message = '';
+
+	if (err.code) {
+    switch (err.code) {
+      // Si un eror de index único ocurre configurar el mensaje de error
+      case 11000:
+      case 11001:
+        message = 'Usuario ya existe';
+        break;
+      // Si un error general ocurre configurar el mensaje de error
+      default:
+        message = 'Se ha producido un error';
+    }
+  } else {
+    // Grabar el primer mensaje de error de una lista de posibles errores
+    for (var errName in err.errors) {
+      if (err.errors[errName].message) message = err.errors[errName].message;
+    }
+  }
+
+  // Devolver el mensaje de error
+  return message;
 };
 
 // Crear un nuevo método controller para crear nuevos artículos
@@ -142,41 +158,15 @@ exports.renderSignup = function(req, res, next) {
 
 // Crear un nuevo método controller que crea nuevos users 'regular'
 exports.signup = function(req, res, next) {
-  // Si user no está conectado, crear y hacer login a un nuevo usuario, en otro caso redireccionar el user de vuelta a la página de la aplicación principal
-  if (!req.user) {
-    // Crear una nueva instancia del modelo 'User'
-    var user = new Article(req.body);
-    var message = null;
 
-    // Configurar la propiedad user provider
-    user.provider = 'local';
+  Article.register(new Article({username: req.body.username}), req.body.password, function(err) {
+    if (err) {
+      console.log('error while user register!', err);
+      return next(err);
+    }
 
-    // Intenta salvar el nuevo documento user
-    user.save(function(err) {
-      // Si ocurre un error, usa el mensaje flash para reportar el error
-      if (err) {
-        // Usa el método de manejo de errores para obtener el mensaje de error
-        var message = getErrorMessage(err);
-
-        // Configura los mensajes flash
-        req.flash('error', message);
-
-        // Redirecciona al usuario de vuelta a la página signup
-        return res.redirect('/signup');
-      }
-
-      // Si el usuario fue creado de modo correcto usa el método 'login' de Passport para hacer login
-      req.login(user, function(err) {
-        // Si ocurre un error de login moverse al siguiente middleware
-        if (err) return next(err);
-
-        // Redireccionar al usuario de vuelta a la página de la aplicación principal
-        return res.redirect('/');
-      });
-    });
-  } else {
-    return res.redirect('/');
-  }
+    res.redirect('/');
+  });
 };
 
 // Crear un nuevo método controller que crea nuevos usuarios 'OAuth'

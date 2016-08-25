@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
+    passportLocalMongoose = require('passport-local-mongoose');
 
 var ArticleSchema = new Schema({
   creado: {
@@ -28,24 +29,8 @@ var ArticleSchema = new Schema({
     // Validar el formato email 
     match: [/.+\@.+\..+/, "Por favor escribe una dirección de email correcta"]
   },
-  username: {
-    type: String,
-    //Configurar un único index 'username'
-    unique: true,
-    //Validar existencia valor 'username'
-    required: 'Nombre de usuario es obligatorio',
-    //Trim el campo 'username'
-    trim: true
-  },
-  password: {
-    type: String,
-    //Validar el valor length de 'password'
-    validate: [
-    function(password) {
-        return password && password.length > 4;
-      }, 'La contraseña debe ser más de 4 caracteres'
-    ]
-  },
+  
+  
 
   
   provider: {
@@ -104,5 +89,7 @@ ArticleSchema.set('toJSON', {
   getters: true,
   virtuals: true
 });
+
+ArticleSchema.plugin(passportLocalMongoose);
 
 mongoose.model('Article', ArticleSchema);
