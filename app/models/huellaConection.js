@@ -29,9 +29,15 @@ var ArticleSchema = new Schema({
     // Validar el formato email 
     match: [/.+\@.+\..+/, "Por favor escribe una dirección de email correcta"]
   },
-  
-  
-
+  username: {
+    type: String,
+    //Configurar un único index 'username'
+    unique: true,
+    //Validar existencia valor 'username'
+    required: 'Nombre de usuario es obligatorio',
+    //Trim el campo 'username'
+    trim: true
+  },
   
   provider: {
     type: String,

@@ -131,7 +131,7 @@ exports.renderSignin = function(req, res, next) {
     // Usa el objeto 'response' para renderizar la página signin
     res.render('signin', {
       // Configurar la variable title de la página
-      title: 'Sign-in Form',
+      title: 'Amateapp:: Sign',
       // Configurar la variable del mensaje flash
       messages: req.flash('error') || req.flash('info')
     });
@@ -147,7 +147,7 @@ exports.renderSignup = function(req, res, next) {
     // Usa el objeto 'response' para renderizar la página signup
     res.render('signup', {
       // Configurar la variable title de la página
-      title: 'Sign-up Form',
+      title: 'Amateapp:: Signup',
       // Configurar la variable del mensaje flash
       messages: req.flash('error')
     });
@@ -160,18 +160,21 @@ exports.renderSignup = function(req, res, next) {
 exports.signup = function(req, res, next) {
   
     Article.register(new Article({ 
-        username: req.body.username, 
+        username: req.body.username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
         provider: 'local'
       }), req.body.password, function(err) {
         if (err) {
-          return res.render('signup', { title: 'Registrate:: ', messages: req.flash('error')});
+          return res.render('signup', { title: 'Registrate:: ', messages: req.flash('IncorrectUsernameError')});
         }
         passport.authenticate('local')(req, res, function () {
             req.session.save(function (err) {
                 if (err) {
                     return next(err);
                 }
-                res.redirect('/');
+                res.redirect('/', { messages: req.flash('IncorrectUsernameError' )});
             });
         });
 
