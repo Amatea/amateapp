@@ -1,2 +1,2 @@
 # amateapp
-aplicacion huella ecologica
+aplicacion huella ecologica 
