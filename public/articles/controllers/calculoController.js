@@ -74,7 +74,7 @@ angular.module('articles')
         });
   };
 
-  function CheckoutController($scope, Articles, $location,  $routeParams, $mdDialog, totalAmount, article) {
+  function CheckoutController($scope, Articles, $location,  $routeParams, $mdDialog, totalAmount, article, $timeout, $window) {
     $scope.totalAmount = totalAmount();
     $scope.article = article;
 
@@ -83,11 +83,14 @@ angular.module('articles')
             })
       
         $scope.addArbol = function() {
-            $scope.article.$update(function() {
-                $location.path('/' + $scope.article._id);
-            }, function(errorResponse) {
-                $scope.error = errorResponse.data.message;
-            });
+            $scope.article.$update(function(callback) {
+                $timeout (function () {
+                  callback($location.path('/' + $scope.article._id),$window.location.reload()
+                  );
+                }, 3000);
+                
+            })
+            
         };
 
     $scope.cancel = function() {
