@@ -20,22 +20,25 @@ angular.module('articles')
               return 3
             }
             else if (total < 15){
-              return 5
-            }
-            else if (total < 20){
-              return 7
-            }
-            else if (total < 25){
               return 10
             }
-            else if (total < 30){
-              return 13
+            else if (total < 20){
+              return 12
             }
-            else if (total < 35){
+            else if (total < 25){
+              return 14
+            }
+            else if (total < 30){
               return 16
             }
+            else if (total < 35){
+              return 18
+            }
+            else if (total < 37){
+              return 22
+            }
             else if(total < 40){
-            return 20;
+            return 30;
             }
             else{
               return 6
