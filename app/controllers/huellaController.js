@@ -174,7 +174,7 @@ exports.signup = function(req, res, next) {
                 if (err) {
                     return next(err);
                 }
-                res.redirect('/', { messages: req.flash('IncorrectUsernameError' )});
+                res.redirect('/');
             });
         });
 
