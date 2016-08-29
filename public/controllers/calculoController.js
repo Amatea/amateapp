@@ -56,7 +56,7 @@ angular.module('huellas')
     $scope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: CheckoutController,
-        templateUrl: 'articles/views/arboles.html',
+        templateUrl: 'huella/views/arboles.html',
         resolve: {
               totalAmount: function () {
                 return $scope.total;
