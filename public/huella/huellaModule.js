@@ -4,22 +4,22 @@ app.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
 		when('/articles/transporte/:articleId', {
-			templateUrl: 'huella/views/transporte.html'
+			templateUrl: 'partials/transporte.html'
 		}).
 		when('/arboles/', {
 			templateUrl: 'huella/views/arboles.html'
 		}).
 		when('/articles/vida/:articleId', {
-			templateUrl: 'huella/views/vida.html'
+			templateUrl: 'partials/vida.html'
 		}).
 		when('/articles/consumo/:articleId', {
-			templateUrl: 'huella/views/consumo.html'
+			templateUrl: 'partials/consumo.html'
 		}).
 		when('/articles/calculo/:articleId', {
-			templateUrl: 'huella/views/calculo-huella.html'
+			templateUrl: 'partials/calculo-huella.html'
 		}).
 		when('/articles/edit/:articleId', {
-			templateUrl: 'huella/views/hogar.html'
+			templateUrl: 'partials/hogar.html'
 		});
 	}
 ]); 
