@@ -51,26 +51,4 @@ angular.module('huellas').controller('vidaController', ['$scope', '$routeParams'
             });
         };
 
-// Crear un nuevo método controller para borrar un único artículo
-        $scope.delete = function(article) {
-            // Si un artículo fue enviado al método, borrarlo
-            if (article) {
-                // Usar el método '$remove' del artículo para borrar el artículo
-                article.$remove(function() {
-                    // Eliminar el artículo de la lista de artículos
-                    for (var i in $scope.articles) {
-                        if ($scope.articles[i] === article) {
-                            $scope.articles.splice(i, 1);
-                        }
-                    }
-                });
-            } else {
-                // En otro caso, usar el método '$remove' de article para borrar el article
-                $scope.article.$remove(function() {
-                    $location.path('articles');
-                });
-            }
-        };
-
-    }
-]);
+}]);
