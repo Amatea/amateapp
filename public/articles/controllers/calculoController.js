@@ -1,5 +1,5 @@
 // Crear el controller 'articles'
-angular.module('articles')
+angular.module('huellas')
 
 .controller('calculoController', ['$scope', '$routeParams', 'Articles', '$mdDialog',
     function($scope, $routeParams, Articles, $mdDialog) {

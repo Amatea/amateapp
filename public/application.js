@@ -9,7 +9,7 @@ var mainApplicationModule = angular.module(mainApplicationModuleName, [
   'ngAnimate',
   'users',
   'example',
-  'articles'
+  'huellas'
   
   ]);
 

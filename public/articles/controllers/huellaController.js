@@ -2,7 +2,7 @@
 'use strict';
 
 // Crear el controller 'articles'
-angular.module('articles').controller('ArticlesController', ['$scope', '$routeParams', '$location', 'Authentication', 'Articles',
+angular.module('huellas').controller('ArticlesController', ['$scope', '$routeParams', '$location', 'Authentication', 'Articles',
     function($scope, $routeParams, $location, Authentication, Articles) {
         // Exponer el service Authentication
         
