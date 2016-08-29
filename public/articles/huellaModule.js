@@ -19,7 +19,7 @@ app.config(['$routeProvider',
 			templateUrl: 'articles/views/calculo-huella.html'
 		}).
 		when('/articles/edit/:articleId', {
-			templateUrl: 'articles/views/edit-article.client.view.html'
+			templateUrl: 'articles/views/hogar.html'
 		});
 	}
 ]); 
