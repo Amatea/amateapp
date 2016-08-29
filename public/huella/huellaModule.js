@@ -3,6 +3,9 @@ var app = angular.module('huellas', []);
 app.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
+		when('/', {
+      		templateUrl: 'partials/inicio.html'
+   		 }).
 		when('/articles/transporte/:articleId', {
 			templateUrl: 'partials/transporte.html'
 		}).
@@ -20,7 +23,10 @@ app.config(['$routeProvider',
 		}).
 		when('/articles/edit/:articleId', {
 			templateUrl: 'partials/hogar.html'
-		});
+		}).
+		otherwise({
+      		redirectTo: '/'
+    	});
 	}
 ]); 
 
@@ -36,3 +42,9 @@ app.factory('Articles', ['$resource', function($resource) {
         
     });
 }]);
+
+app.controller('ExampleController', ['$scope', 'Authentication', '$window',
+  function($scope, Authentication, $window) {
+    $scope.authentication = Authentication;
+  }
+]);
