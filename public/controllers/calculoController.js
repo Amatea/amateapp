@@ -90,7 +90,7 @@ angular.module('huellas')
                 $timeout (function () {
                   callback($location.path('/' + $scope.article._id),$window.location.reload()
                   );
-                }, 3000);
+                }, 2200);
                 
             })
             
