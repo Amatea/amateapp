@@ -1,9 +1,11 @@
-<form name="calculoForm">
-			<label>Debes Sembrar {{totalAmount}} árboles este año.</label>
-			<div layout="row">
-				<div>
-					<p><md-checkbox ng-model="article.totalTrees"  aria-label="{{totalAmount}}"  ng-true-value="{{totalAmount}}" required md-no-asterisk></md-checkbox>estoy de acuerdo</p>
-				</div>
+<md-content flex layout-padding>
+	<form name="calculoForm">
+		<label>Debes Sembrar {{totalAmount}} árboles este año.</label>
+		<div layout="row">
+			<div>
+				<p><md-checkbox ng-model="article.totalTrees"  aria-label="{{totalAmount}}"  ng-true-value="{{totalAmount}}" required md-no-asterisk></md-checkbox>estoy de acuerdo</p>
 			</div>
-		</form>
-		<md-button class="md-primary md-hue-1" ng-disabled="calculoForm.$invalid" ng-click="addArbol(); answer('correctamente')">Continuar</md-button>
+		</div>
+	</form>
+	<md-button class="md-primary md-hue-1" ng-disabled="calculoForm.$invalid" ng-click="addArbol(); answer('correctamente')">Continuar</md-button>
+</md-content>
