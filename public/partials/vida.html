@@ -1,7 +1,11 @@
+<section ng-controller="vidaController" ng-init="findOne()">
+<div>
+  <toolbar></toolbar>
+</div>
 <div layout="column" ng-cloak class="md-inline-form">
-  <md-content layout-padding md-theme="docs-dark">
+  <md-content layout-padding >
 	<h1>Estilo de Vida</h1>
-    <div ng-controller="vidaController" ng-init="findOne()">
+    <div >
       <form name="huellaForm">
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
@@ -43,3 +47,4 @@
     </div>
   </md-content>
 </div>
+</section>

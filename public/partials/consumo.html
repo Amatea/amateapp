@@ -1,9 +1,13 @@
+<section ng-controller="consumoController" ng-init="findOne()">
+<div>
+  <toolbar></toolbar>
+</div>
 <div layout="column" ng-cloak class="md-inline-form">
 
-  <md-content layout-padding md-theme="docs-dark">
+  <md-content layout-padding >
 	<h1>Consumo</h1>
 
-    <div section ng-controller="consumoController" ng-init="findOne()">
+    <div section >
       <form name="consumoForm">
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
@@ -49,3 +53,4 @@
     </div>
   </md-content>
 </div>
+</section>
