@@ -12,9 +12,12 @@ var mainApplicationModule = angular.module(mainApplicationModuleName, [
   
   ]);
 
-mainApplicationModule.config(['$locationProvider',
-  function($locationProvider) {
+mainApplicationModule.config(['$locationProvider', '$mdThemingProvider',
+  function($locationProvider, $mdThemingProvider) {
     $locationProvider.hashPrefix('!');
+    $mdThemingProvider.theme('default')
+      .primaryPalette('purple')
+      .accentPalette('pink');
   }
 ]);
 

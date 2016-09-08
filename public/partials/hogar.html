@@ -1,6 +1,6 @@
-<nav class="header-hogar">
+<md-toolbar>
   <div class="ico-hogar"></div>
-</nav>
+</md-toolbar>
 <div layout="column" ng-cloak class="md-inline-form">
 	<md-content layout-padding>
 		<h1 class="h1-hogar">Hogar</h1>
@@ -13,6 +13,10 @@
 					<img class="hogar" src="hogar.png" alt="">
 				</div>
 				<div layout-padding flex>
+					<md-card>
+					<div>
+						<h2>Preguntas ::</h2>
+					</div>
 					<form name="hogarForm"  novalidate>
 						<div layout-gt-sm="column">
 							<md-input-container class="md-block" flex-gt-sm>
@@ -53,6 +57,7 @@
 						</div>
 					</form>
 					<md-button class="md-primary md-hue-1" ng-disabled="hogarForm.$invalid" ng-click="update()">siguiente</md-button>
+					</md-card>
 				</div>
 			</div>
 		</section>
