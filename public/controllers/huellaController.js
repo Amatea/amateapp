@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('huellas').controller('hogarController', ['$scope', '$routeParams', '$location', 'Articles',
+angular.module('huellas')
+
+.controller('hogarController', ['$scope', '$routeParams', '$location', 'Articles',
     function($scope, $routeParams, $location, Articles) {
        
         $scope.find = function() {

@@ -1,22 +1,7 @@
 <section ng-controller="hogarController" ng-init="findOne()">
-	<md-toolbar layout="row">
-		<div layout-margin flex>
-			<img class="apple_icon" src="apple-icon.png" />
-		</div>
-		<md-menu>
-          <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)">
-            <img class="md-avatar"  src="{{article.providerData.picture}}">
-          </md-button>
-          <md-menu-content>
-            <md-menu-item>
-              <a><md-button ng-click="inicio()">Inicio</md-button></a>
-            </md-menu-item>
-						<md-menu-item>
-              <a href="/signout"><md-button>Cerrar Sesion</md-button></a>
-            </md-menu-item>
-          </md-menu-content>
-        </md-menu>
-	</md-toolbar>
+	<div>
+		<toolbar></toolbar>
+	</div>
 	<div layout="column" ng-cloak class="md-inline-form">
 		<md-content>
 			<h1>Hogar</h1>
