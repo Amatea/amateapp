@@ -83,6 +83,13 @@ body {
   margin-top: 20px;
 }
 
+.md-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 20px;
+}
 
 .fa-heart-o {
   color: $secondary-color;
@@ -170,7 +177,7 @@ body {
 }
 
 .toolbar {
-  background: white !important;
+  
   border-bottom: 1px gray solid;
   height: 70px;
   overflow: hidden;
