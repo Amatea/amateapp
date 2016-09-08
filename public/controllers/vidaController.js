@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('huellas').controller('vidaController', ['$scope', '$routeParams', '$location', 'Articles',
+angular.module('huellas')
+
+.controller('vidaController', ['$scope', '$routeParams', '$location', 'Articles',
     function($scope, $routeParams, $location, Articles) {
         
         $scope.find = function() {
@@ -20,5 +22,13 @@ angular.module('huellas').controller('vidaController', ['$scope', '$routeParams'
                 $scope.error = errorResponse.data.message;
             });
         };
+
+        $scope.inicio = function() {
+            $location.path('/' + $scope.article._id);
+        }
+
+        $scope.cerrar = function() {
+            $location.path('/signout');
+        }
 
 }]);

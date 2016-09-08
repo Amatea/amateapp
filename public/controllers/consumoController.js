@@ -22,4 +22,12 @@ angular.module('huellas').controller('consumoController', ['$scope', '$routePara
             });
         };
 
+        $scope.inicio = function() {
+            $location.path('/' + $scope.article._id);
+        }
+
+        $scope.cerrar = function() {
+            $location.path('/signout');
+        }
+
 }]);

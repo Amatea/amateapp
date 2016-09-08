@@ -4,6 +4,14 @@ angular.module('huellas')
 .controller('calculoController', ['$scope', '$routeParams', 'Articles', '$mdDialog',
     function($scope, $routeParams, Articles, $mdDialog) {
     
+    $scope.inicio = function() {
+            $location.path('/' + $scope.article._id);
+        }
+
+    $scope.cerrar = function() {
+        $location.path('/signout');
+    }
+    
     $scope.findOne = [
       $scope.article = Articles.get({
           articleId: $routeParams.articleId

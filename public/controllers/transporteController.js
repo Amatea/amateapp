@@ -22,4 +22,12 @@ angular.module('huellas').controller('transporteController', ['$scope', '$routeP
             });
         };
 
+        $scope.inicio = function() {
+            $location.path('/' + $scope.article._id);
+        }
+
+        $scope.cerrar = function() {
+            $location.path('/signout');
+        }
+
  }]);
