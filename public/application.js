@@ -8,7 +8,8 @@ var mainApplicationModule = angular.module(mainApplicationModuleName, [
   'ngAnimate',
   'ngAnimate',
   'users',
-  'huellas'
+  'huellas',
+  'angularMoment'
   
   ]);
 

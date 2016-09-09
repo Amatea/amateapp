@@ -41,14 +41,15 @@
     </div>
   </section>
   <div ng-show="authentication.user" >
-    <md-toolbar class="toolbar">
+    <md-toolbar>
       <div class="md-toolbar-tools">
-        <div class="col m5 hide-on-small-only">
-            <img class="apple_icon" src="apple-icon.png" />
-        </div>
         <div>
-            <i class="fa fa-user" aria-hidden="true"></i>
+          <img class="apple_icon" src="apple-icon.png" />
         </div>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="More">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </md-button>
       </div>
     </md-toolbar>
     <div layout="row" layout-align="center center">
@@ -68,9 +69,25 @@
         <span>Este año debes sembrar:
            <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2>  
         </span>
+        <div>
+          <p>Creado:: {{authentication.user.creado | amDateFormat:'dddd, MMMM Do YYYY'}} </p>
+          <p>Restan::</p>
+          <span am-time-ago="message.time"></span>
+          <p> creado hace:{{authentication.user.creado | amDifference: null : 'days'}} dias</p>
+          
+          <p>{{ datenow + 31536000000 | amDateFormat:'dddd, MMMM Do YYYY'}}</p>
+          
+          {{diff | amDurationFormat }}
+
+          <hr>
+
+          <p>{{mas | amDateFormat:'dddd, MMMM Do YYYY'}}</p>
+          
+
+        </div>
       </div>
 
-      <div>
+      <div hide-xs>
         <img class="jaguar" src="jaguar.png" alt="">
       </div>
     </div>

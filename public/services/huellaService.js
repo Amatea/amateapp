@@ -45,5 +45,15 @@ app.factory('Articles', ['$resource', function($resource) {
 app.controller('ExampleController', ['$scope', 'Authentication', '$window',
   function($scope, Authentication, $window) {
     $scope.authentication = Authentication;
-  }
-]);
+
+	$scope.año = 31536000000;
+
+	$scope.message = new Date("2016-05-01T12:00:00");
+
+	$scope.datenow = Date.now();
+
+	$scope.diff = $scope.datenow - $scope.message;
+
+	$scope.mas = $scope.message + $scope.año;
+
+  }]);
