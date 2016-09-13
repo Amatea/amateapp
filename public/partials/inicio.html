@@ -71,19 +71,7 @@
         </span>
         <div>
           <p>Creado:: {{authentication.user.creado | amDateFormat:'dddd, MMMM Do YYYY'}} </p>
-          <p>Restan::</p>
           <span am-time-ago="message.time"></span>
-          <p> creado hace:{{authentication.user.creado | amDifference: null : 'days'}} dias</p>
-          
-          <p>{{ datenow + 31536000000 | amDateFormat:'dddd, MMMM Do YYYY'}}</p>
-          
-          {{diff | amDurationFormat }}
-
-          <hr>
-
-          <p>{{mas | amDateFormat:'dddd, MMMM Do YYYY'}}</p>
-          
-
         </div>
       </div>
 
