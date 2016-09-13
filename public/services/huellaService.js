@@ -45,5 +45,5 @@ app.factory('Articles', ['$resource', function($resource) {
 app.controller('ExampleController', ['$scope', 'Authentication', '$window',
   function($scope, Authentication, $window) {
     $scope.authentication = Authentication;
-  }
-]);
+
+  }]);

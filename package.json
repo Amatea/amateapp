@@ -12,6 +12,7 @@
   "license": "MIT",
   "homepage": "https:amateapp.org",
   "dependencies": {
+    "angular-moment": "^1.0.0-beta.6",
     "body-parser": "~1.8.0",
     "compression": "~1.0.11",
     "connect-flash": "~0.1.1",
@@ -20,6 +21,7 @@
     "express-session": "~1.7.6",
     "jade": "^1.11.0",
     "method-override": "~2.2.0",
+    "moment": "^2.14.1",
     "mongoose": "~3.8.15",
     "morgan": "~1.3.0",
     "passport": "~0.2.1",
