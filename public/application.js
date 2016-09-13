@@ -17,7 +17,10 @@ mainApplicationModule.config(['$locationProvider', '$mdThemingProvider',
   function($locationProvider, $mdThemingProvider) {
     $locationProvider.hashPrefix('!');
     $mdThemingProvider.theme('default')
-      .primaryPalette('teal')
+      .primaryPalette('teal', {
+        'default': '500',
+        'hue-1': '700'
+      })
       .accentPalette('purple');
   }
 ]);

@@ -4,7 +4,14 @@
 	</div>
 	<div layout="column" ng-cloak class="md-inline-form">
 		<md-content>
-			<h1>Hogar</h1>
+			<md-toolbar class="md-hue-1" layout="row">
+				<h1 flex>Hogar</h1>
+				<md-button class="md-fab" aria-label="Eat cake">
+					 <md-icon layout="center center"><i class="fa fa-ellipsis-h fa-2x" aria-hidden="true"></i></md-icon>
+            
+        </md-button>
+			</md-toolbar>
+			
 			<span class="text-hogar">Puedes reducir tu Huella en tu casa por poco o ningun costo a través de cambios en tus habitos,
 		la conservación y el uso de la energia, el agua más eficiente </span>
 			<section>
@@ -15,7 +22,7 @@
 					</div>
 					<div layout-padding flex>
 						<div>
-							<h2>Preguntas ::</h2>
+							<h2 class="md-accent">Preguntas ::</h2>
 						</div>
 						<form name="hogarForm"  novalidate>
 							<div layout-gt-sm="column">
