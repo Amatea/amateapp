@@ -1,8 +1,8 @@
 // Crear el controller 'articles'
 angular.module('huellas')
 
-.controller('calculoController', ['$scope', '$routeParams', 'Articles', '$mdDialog',
-    function($scope, $routeParams, Articles, $mdDialog) {
+.controller('calculoController', ['$scope', '$routeParams', '$location', 'Articles', '$mdDialog',
+    function($scope, $routeParams, $location, Articles, $mdDialog) {
     
     $scope.inicio = function() {
             $location.path('/' + $scope.article._id);
