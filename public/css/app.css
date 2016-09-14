@@ -187,3 +187,11 @@ body {
   width: 50px;
   margin: 0px;
 }
+
+.titulo_mdtoolbar {
+  margin-left: 18px;
+}
+
+.icon_mdtoolbar {
+  margin-top: 16px;
+}

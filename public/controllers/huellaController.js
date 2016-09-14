@@ -2,8 +2,8 @@
 
 angular.module('huellas')
 
-.controller('hogarController', ['$scope', '$routeParams', '$location', 'Articles',
-    function($scope, $routeParams, $location, Articles) {
+.controller('hogarController', ['$scope', '$routeParams', '$location', 'Articles', '$mdDialog',
+    function($scope, $routeParams, $location, Articles, $mdDialog) {
        
         $scope.find = function() {
             $scope.articles = Articles.query();
@@ -32,4 +32,25 @@ angular.module('huellas')
             $location.path('/signout');
         }
 
+        $scope.showAdvanced = function(ev) {
+            $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'partials/dialog.hogar.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true,
+            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+            })  
+        };
+
+  function DialogController($scope, $mdDialog) {
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+  }
  }]);

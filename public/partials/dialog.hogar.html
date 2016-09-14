@@ -1,0 +1,34 @@
+<md-dialog aria-label="Tips:: Hogar">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Tips:: Hogar</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()" aria-label="Tips:: Hogar">
+          <i class="fa fa-ban" aria-hidden="true"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Cómo puedo reducir mi impacto en el hogar?</h2>
+        <p>
+          Puedes reducir tu Huella en tu casa por poco o ningun costo a través de cambios en tus habitos, la conservación y el uso de la energia, el agua más eficiente
+        </p>
+        <img style="margin: auto; max-width: 100%;" alt="Imagen representativa" src="hogar.dialog.png">
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button href=https://es.wikipedia.org/wiki/Ecolog%C3%ADa_urbana target="_blank" md-autofocus>
+        Wikipedia
+      </md-button>
+      <span flex></span>
+      
+      <md-button ng-click="answer('useful')">
+        Useful
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
