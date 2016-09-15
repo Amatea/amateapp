@@ -195,3 +195,13 @@ body {
 .icon_mdtoolbar {
   margin-top: 16px;
 }
+
+.titulo_resultado {
+  margin-left: 16px;
+}
+
+.label {
+  margin-top: 60px;
+  margin-left: 16px;
+  height: 40px;
+}

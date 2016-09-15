@@ -2,29 +2,27 @@
 <div>
   <toolbar></toolbar>
 </div>
-<h2>Resultado ::</h2>
+<h2 class="titulo_resultado">Resultado ::</h2>
 <div>
-	<div  >
-		<h3>Gracias {{article.firstName}}</h3>
-		<div ng-if="status" id="status">
-			<b layout="row" layout-align="center center" class="md-padding">
-				{{status}}
-			</b>
-  	</div>
-		
-		<h3>total {{total2()}}</h3>
-		<form name="calculoForm">
-			<label>Debes Sembrar {{total()}} árboles este año.</label>
-			<div layout="row">
-				<div>
-					
-				</div>
-			</div>
-		</form>
-		
-
-<md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
-      Guardar Información
+	<section layout="row" layout-align="center center">
+		<div>
+			<img class="avatar" src="{{article.providerData.picture}}" alt="avatar">
+		</div>
+		<div layout-margin>
+			<h2 class="md-palette">Gracias {{article.firstName}}</h2>
+			<p >total de puntos:: {{total2()}}</p>
+		</div>
+	</section>
+	
+	<div ng-if="status" id="status">
+		<b layout="row" layout-align="center center" class="md-padding">
+			{{status}}
+		</b>
 	</div>
+	
+	<form name="calculoForm">
+		<p layout-align="center center" class="label">Debes Sembrar {{total()}} árboles este año.</p>
+	</form>
+	<md-button class="md-primary md-raised" ng-click="showAdvanced($event)">Guardar</md-button>
 </div>
 </section>
