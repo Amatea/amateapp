@@ -205,3 +205,9 @@ body {
   margin-left: 16px;
   height: 40px;
 }
+
+.footer {
+  border-top: 0.2px solid lightseagreen;
+  margin-top: 20px;
+  color: rebeccapurple;
+}
