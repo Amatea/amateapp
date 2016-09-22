@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|News+Cycle" rel="stylesheet">
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
 	<link rel="stylesheet" href="	https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" type='text/css' href='/css/app.css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.4.4/angular-resource.js"></script>
 	<script src="https://code.angularjs.org/1.4.4/angular-route.js"></script>
@@ -36,7 +36,7 @@
 	<section ng-view></section>
 	<script type="text/javascript">
     window.user = <%- user || 'null' %>;
-    </script>
+  </script>
 
 	<script type="text/javascript" src="/services/huellaService.js"></script>
 	<script type="text/javascript" src="/directives/huellaDirective.js"></script>
@@ -55,6 +55,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/locale/es.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js"></script>
-			
 </body>
 </html>
