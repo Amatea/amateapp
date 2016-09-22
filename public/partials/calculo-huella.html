@@ -23,7 +23,11 @@
 	<form name="calculoForm">
 		<p layout-align="center center" class="label">Debes Sembrar {{total()}} árboles este año.</p>
 	</form>
-	<md-button class="md-primary md-raised" ng-click="showAdvanced($event)">Guardar</md-button>
+	<section layout="row">
+		<md-button class="md-accent md-raised" ng-click="showAdvanced($event)" flex="30"><i class="fa fa-paper-plane" aria-hidden="true"></i> Guardar</md-button>
+		<div flex></div>
+		<md-button class="md-accent md-raised" ng-click="inicio()" flex="20"><i class="fa fa-home" aria-hidden="true"></i> inicio</md-button>
+	</section>
 </div>
 </section>
 <div>
