@@ -38,8 +38,6 @@ module.exports = function() {
     secret: config.sessionSecret
   }));
 
-// Configurar el motor view de la aplicación y el directorio 'views'
-  app.set('views', './app/views');
   app.set('view engine', 'pug');
 
   app.use(flash());
