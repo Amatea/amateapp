@@ -1,50 +1,5 @@
-doctype html
-html
-  head
-    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
-    link(href='https://fonts.googleapis.com/css?family=Amatic+SC|News+Cycle', rel='stylesheet')
-    link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css')
-    link(rel='stylesheet', href='	https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
-    link(rel='stylesheet', type='text/css', href='/css/app.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js')
-    script(src='https://code.angularjs.org/1.4.4/angular-resource.js')
-    script(src='https://code.angularjs.org/1.4.4/angular-route.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
-    link(rel='apple-touch-icon', sizes='57x57', href='/apple-icon-57x57.png')
-    link(rel='apple-touch-icon', sizes='60x60', href='/apple-icon-60x60.png')
-    link(rel='apple-touch-icon', sizes='72x72', href='/apple-icon-72x72.png')
-    link(rel='apple-touch-icon', sizes='76x76', href='/apple-icon-76x76.png')
-    link(rel='apple-touch-icon', sizes='114x114', href='/apple-icon-114x114.png')
-    link(rel='apple-touch-icon', sizes='120x120', href='/apple-icon-120x120.png')
-    link(rel='apple-touch-icon', sizes='144x144', href='/apple-icon-144x144.png')
-    link(rel='apple-touch-icon', sizes='152x152', href='/apple-icon-152x152.png')
-    link(rel='apple-touch-icon', sizes='180x180', href='/apple-icon-180x180.png')
-    link(rel='icon', type='image/png', sizes='192x192', href='/android-icon-192x192.png')
-    link(rel='icon', type='image/png', sizes='32x32', href='/favicon-32x32.png')
-    link(rel='icon', type='image/png', sizes='96x96', href='/favicon-96x96.png')
-    link(rel='icon', type='image/png', sizes='16x16', href='/favicon-16x16.png')
-    link(rel='manifest', href='/manifest.json')
-    meta(name='msapplication-TileColor', content='#ffffff')
-    meta(name='msapplication-TileImage', content='/ms-icon-144x144.png')
-    meta(name='theme-color', content='#ffffff')
-    title#title
-  body
-    section(ng-view='')
-    script(type='text/javascript').
-      window.user =!{user} || null;
-    script(type='text/javascript', src='/services/huellaService.js')
-    script(type='text/javascript', src='/directives/huellaDirective.js')
-    script(type='text/javascript', src='/controllers/huellaController.js')
-    script(type='text/javascript', src='/controllers/consumoController.js')
-    script(type='text/javascript', src='/controllers/transporteController.js')
-    script(type='text/javascript', src='/controllers/vidaController.js')
-    script(type='text/javascript', src='/controllers/calculoController.js')
-    script(type='text/javascript', src='/services/userService.js')
-    script(type='text/javascript', src='/application.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-messages.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/locale/es.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js')
+extends layout.pug
+
+block content
+  section(ng-view='')
+
