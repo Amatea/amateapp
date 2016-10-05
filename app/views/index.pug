@@ -32,7 +32,7 @@ html
   body
     section(ng-view='')
     script(type='text/javascript').
-      window.user = <%- user || 'null' %>;
+      window.user =!{user} || null;
     script(type='text/javascript', src='/services/huellaService.js')
     script(type='text/javascript', src='/directives/huellaDirective.js')
     script(type='text/javascript', src='/controllers/huellaController.js')

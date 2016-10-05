@@ -40,7 +40,7 @@ module.exports = function() {
 
 // Configurar el motor view de la aplicación y el directorio 'views'
   app.set('views', './app/views');
-  app.set('view engine', 'ejs');
+  app.set('view engine', 'pug');
 
   app.use(flash());
   app.use(passport.initialize());
