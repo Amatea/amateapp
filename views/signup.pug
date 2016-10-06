@@ -1,39 +1,50 @@
 extends layout.pug
 
 block content
-  .container
-    .row
-      .col.s10.push-s1
-        .row
-          .col.m5.hide-on-small-only
-            img.iphone(src='iphone.png')
-          .col.s12.m7
-            .row
-              .signup-box
-                form.signup-form(action='/signup', method='post')
-                  h2 Regístrate para conocer tu huella
-                  .section
-                    a.btn.btn-fb.hide-on-small-only.btn_icon
-                      i.fa.fa-facebook-official
-                      |  Iniciar con facebook
-                    a.btn.btn-fb.hide-on-small-only.btn_icon_g(href='/oauth/google')
-                      i.fa.fa-google-plus(aria-hidden='true')
-                      |  Iniciar con Google
-                    a.btn.btn-fb.hide-on-med-and-up.btn_icon
-                      i.fa.fa-facebook-official
-                      |  iniciar sesion
-                    a.btn.btn-fb.hide-on-med-and-up.btn_icon_g(href='/oauth/google')
-                      i.fa.fa-google-plus(aria-hidden='true')
-                      |  iniciar sesion
-                  .divider
-                  .section
-                    input(type='email', name='email', placeholder='Correo electrónico')
-                    input(type='text', name='firstName', placeholder='Nombre')
-                    input(type='text', name='lastName', placeholder='Apellido')
-                    input(type='text', name='username', placeholder='Nombre de usuario')
-                    input(type='password', name='password', placeholder='Contraseña')
-                    button.btn.waves-effect.waves-light.btn-signup(type='submit') Regístrate
-            .row
-              .login-box
-                | ¿Tienes una cuenta? 
-                a(href='/') Entrar
+  - for (var i in messages)
+    div.flash  #{messages[i]}
+
+  md-container(layout='row')
+    div(hide-xs, layout-margin, layout-padding, flex='40')
+      img.iphone(src='iphone.png')
+    md-container(layout='column', layout-align='center center', flex)
+      div
+        h1(layout-align='center center') Conoce tu huella
+      section(layout='column', layout-align='center center')
+        a(href='/auth/facebook')
+          md-button.md-raised.md-primary
+            i.fa.fa-facebook-official.fa-lg
+            |  Iniciar con facebook
+        a(href='/oauth/google')
+          md-button.md-raised.md-primary.boton-box
+            i.fa.fa-google-plus.fa-lg(aria-hidden='true')
+            |  Iniciar con Google
+      section.input-box(layout='column')
+        form(action='/signup', method='post' layout='column')
+          md-input-container
+            label Email
+            md-icon.name(md-svg-src='img/mail.svg')
+            input(type='text', name='email')
+          md-input-container
+            label Nombre
+            md-icon.name(md-svg-src='img/face.svg')
+            input(type='text', name='firstName')
+          md-input-container
+            label Apellido
+            md-icon.name(md-svg-src='img/face.svg')
+            input(type='text', name='lastName')
+          md-input-container
+            label Username
+            md-icon.name(md-svg-src='img/face.svg')
+            input(type='text', name='username')
+          md-input-container
+            label Password
+            md-icon.name(md-svg-src='img/code.svg')
+            input(type='password', name='password')
+          md-button(type='submit')
+            i.fa.fa-paper-plane(aria-hidden='true')
+            |   Regístrate
+          section
+            .login-box
+              | ¿Tienes una cuenta? 
+              a(href='/') Entrar

@@ -119,7 +119,7 @@ exports.renderSignup = function(req, res, next) {
   if (!req.user) {
     res.render('signup', {
       
-      title: 'Amateapp:: Signup',
+      title: 'Signup',
      
       messages: req.flash('error')
     });
@@ -139,7 +139,7 @@ exports.signup = function(req, res, next) {
         provider: 'local'
       }), req.body.password, function(err) {
         if (err) {
-          return res.render('signup', { title: 'Registrate:: ', messages: req.flash('IncorrectUsernameError')});
+          return res.render('signup', { title: 'Regístrate:: ', messages: req.flash('IncorrectUsernameError')});
         }
         passport.authenticate('local')(req, res, function () {
             req.session.save(function (err) {

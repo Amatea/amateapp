@@ -31,7 +31,7 @@ module.exports = function(app) {
      .get(articles.renderSignin)
      .post(passport.authenticate('local', {
        successRedirect: '/',
-       failureRedirect: '/signin',
+       failureRedirect: '/signup',
        failureFlash: true
      }));
      

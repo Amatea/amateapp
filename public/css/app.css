@@ -15,9 +15,14 @@ body {
 }
 
 .iphone {
-  max-width: 100%;
+  max-width: 80%;
 }
-
+.input-box {
+  margin-top: 40px;
+}
+.boton-box {
+  margin-top: 20px;
+}
 .site-footer {
   text-transform: uppercase;
   font-size: 12px;
@@ -30,7 +35,9 @@ body {
   justify-content: center;
 }
 
-.login-box,
+.login-box {
+  margin-top: 30px;
+}
 .signup-box {
   background-color: white;
   border: 1px solid #edeeee;
