@@ -2,14 +2,14 @@ extends layout.pug
 
 block content
   - for (var i in messages)
-    div.flash  #{messages[i]}
+    div.flash() #{messages[i]}
 
   md-container(layout='row')
     div(hide-xs, layout-margin, layout-padding, flex='40')
       img.iphone(src='iphone.png')
-    md-container(layout='column', layout-align='center center', flex)
+    md-container(layout='column', layout-align='center center', flex='60' flex-xs='100')
       div
-        h1(layout-align='center center') Conoce tu huella
+        h1.sig_subt(layout-align='center center') Conoce tu huella
       section(layout='column', layout-align='center center')
         a(href='/auth/facebook')
           md-button.md-raised.md-primary
