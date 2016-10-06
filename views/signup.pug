@@ -1,0 +1,39 @@
+extends layout.pug
+
+block content
+  .container
+    .row
+      .col.s10.push-s1
+        .row
+          .col.m5.hide-on-small-only
+            img.iphone(src='iphone.png')
+          .col.s12.m7
+            .row
+              .signup-box
+                form.signup-form(action='/signup', method='post')
+                  h2 Regístrate para conocer tu huella
+                  .section
+                    a.btn.btn-fb.hide-on-small-only.btn_icon
+                      i.fa.fa-facebook-official
+                      |  Iniciar con facebook
+                    a.btn.btn-fb.hide-on-small-only.btn_icon_g(href='/oauth/google')
+                      i.fa.fa-google-plus(aria-hidden='true')
+                      |  Iniciar con Google
+                    a.btn.btn-fb.hide-on-med-and-up.btn_icon
+                      i.fa.fa-facebook-official
+                      |  iniciar sesion
+                    a.btn.btn-fb.hide-on-med-and-up.btn_icon_g(href='/oauth/google')
+                      i.fa.fa-google-plus(aria-hidden='true')
+                      |  iniciar sesion
+                  .divider
+                  .section
+                    input(type='email', name='email', placeholder='Correo electrónico')
+                    input(type='text', name='firstName', placeholder='Nombre')
+                    input(type='text', name='lastName', placeholder='Apellido')
+                    input(type='text', name='username', placeholder='Nombre de usuario')
+                    input(type='password', name='password', placeholder='Contraseña')
+                    button.btn.waves-effect.waves-light.btn-signup(type='submit') Regístrate
+            .row
+              .login-box
+                | ¿Tienes una cuenta? 
+                a(href='/') Entrar
