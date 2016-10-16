@@ -9,7 +9,7 @@ module.exports = {
   facebook: {
     clientID: '2082485698642238',
     clientSecret: '92db4727bf904bc5126b1739ac4794d3',
-    callbackURL: 'http://localhost:3000/auth/facebook/callback'
+    callbackURL: 'http://amateapp.com/auth/facebook/callback'
   }
 };
 

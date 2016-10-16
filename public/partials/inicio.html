@@ -27,7 +27,6 @@
               <md-button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Iniciar Sesion</md-button>
             <section>
           </form>
-        
           <div class="login-box">
             ¿No tienes una cuenta? <a href="/signup">Regístrate</a>
           </div>
@@ -41,22 +40,17 @@
   </div>
     <div layout="row" layout-align="center center">
       <div>
-        <div layout="row">
-          <div>
+        <div layout="column">
+          <section layout="row">
             <img class="avatar" src="{{authentication.user.providerData.picture}}" alt="">
-          </div>
-          <div>
             <h2 class="ini_name">Hola <span ng-bind="authentication.user.firstName"></span></h2>
-              <ul>
-                <li class="experiencia"><a href="/#!/articles/edit/{{authentication.user._id}}">Inicia tu Experiencia</a></li>
-              </ul>
-          </div>
+          </section>
+          <span class="experiencia"><a href="/#!/articles/edit/{{authentication.user._id}}">Inicia tu Experiencia</a></span>
         </div>
         <span>Este año debes sembrar:
            <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2>  
         </span>
       </div>
-
       <div hide-xs>
         <img class="jaguar" src="jaguar.png" alt="">
       </div>
@@ -64,6 +58,4 @@
     <div>
       <footer></footer>
     </div>
-    
-  
 </section>
