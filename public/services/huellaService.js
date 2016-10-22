@@ -42,6 +42,16 @@ app.factory('Articles', ['$resource', function($resource) {
     });
 }]);
 
+app.factory('Authentication', [
+  function() {
+    this.user = window.user;
+
+    return {
+      user: this.user
+    };
+  }
+]);
+
 app.controller('ExampleController', ['$scope', 'Authentication', '$window',
   function($scope, Authentication, $window) {
     $scope.authentication = Authentication;

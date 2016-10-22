@@ -7,7 +7,6 @@ var mainApplicationModule = angular.module(mainApplicationModuleName, [
   'ngMessages',
   'ngAnimate',
   'ngAnimate',
-  'users',
   'huellas',
   'angularMoment'
   
