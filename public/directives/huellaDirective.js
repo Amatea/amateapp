@@ -13,3 +13,10 @@ angular.module('huellas')
 			templateUrl: '/partials/footer.html',
 		};
 	});
+
+.directive('timeland', function() {
+		return {
+			restrict: 'E',
+			templateUrl: '/partials/timeland.html',
+		};
+	});
