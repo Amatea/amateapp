@@ -4,7 +4,7 @@ module.exports = {
   google: {
     clientID: '948861021543-o130rj4k4h6u803ic9fhcmpi15bhhepi.apps.googleusercontent.com',
     clientSecret: 'FOqDAvf2nGfbMi-trfabq8NZ',
-    callbackURL: 'http://amateapp.com/oauth/google/callback'
+    callbackURL: 'http://www.amateapp.com/oauth/google/callback'
   },
   facebook: {
     clientID: '2082485698642238',
