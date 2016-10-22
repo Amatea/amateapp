@@ -1,17 +1,25 @@
-<section>
-    <md-card>
-        <md-card-title>
-            <md-card-title-text>
-            <span class="md-headline">{{authentication.user.firstName}}</span>
-            <span class="md-subhead">Small</span>
-            </md-card-title-text> 
+<section layout="row">
+    <div flex>
+        <md-card ng-repeat="user in articles" layout="column" >
+            <md-card-header >
             <md-card-title-media>
-            <div class="md-media-sm card-media avatar"><img src="{{authentication.user.providerData.picture}}" alt=""></div>
+                <div class="md-media-md card-media avatar">
+                    <img class="avatar" src="{{user.providerData.picture}}" alt="">
+                </div>
             </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button><h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2></md-button>
-            <md-button>Action 2</md-button>
-        </md-card-actions>
-    </md-card>
+            <md-card-header-text>
+                <span class="md-title">{{user.firstName}}</span>
+                <span class="md-subhead">subhead</span>
+            </md-card-header-text>
+            </md-card-header>
+            <md-card-title>
+            <md-card-title-text>
+                <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{user.totalTrees}} Árboles</h2>
+            </md-card-title-text>
+            </md-card-title>
+        </md-card>
+    </div>
+    <div hide show-gt-xs flex>
+        <div>Hello word</div>
+    </div>
 </section>

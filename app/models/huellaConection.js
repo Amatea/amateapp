@@ -20,7 +20,7 @@ var ArticleSchema = new Schema({
   p9: Number,
   p10: Number,
   p11: Number,
-  totalTrees: { type: Number, default: ''},
+  totalTrees: { type: Number, default: '0'},
 
   firstName: String,
   lastName: String,
