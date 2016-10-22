@@ -1,6 +1,4 @@
-var mainApplicationModuleName = 'mean';
-
-var mainApplicationModule = angular.module(mainApplicationModuleName, [
+var App = angular.module('App', [
   'ngResource',
   'ngRoute', 
   'ngMaterial', 
@@ -12,7 +10,7 @@ var mainApplicationModule = angular.module(mainApplicationModuleName, [
   
   ]);
 
-mainApplicationModule.config(['$locationProvider', '$mdThemingProvider',
+App.config(['$locationProvider', '$mdThemingProvider',
   function($locationProvider, $mdThemingProvider) {
     $locationProvider.hashPrefix('!');
     $mdThemingProvider.theme('default')
@@ -23,7 +21,3 @@ mainApplicationModule.config(['$locationProvider', '$mdThemingProvider',
       .accentPalette('purple');
   }
 ]);
-
-angular.element(document).ready(function() {
-  angular.bootstrap(document, [mainApplicationModuleName]);
-});
