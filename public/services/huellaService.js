@@ -51,9 +51,3 @@ app.factory('Authentication', [
     };
   }
 ]);
-
-app.controller('ExampleController', ['$scope', 'Authentication', '$window',
-  function($scope, Authentication, $window) {
-    $scope.authentication = Authentication;
-
-  }]);

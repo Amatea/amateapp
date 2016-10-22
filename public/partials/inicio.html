@@ -34,28 +34,14 @@
       </md-container>
     </div>
   </section>
-  <div ng-show="authentication.user" >
+  <div ng-show="authentication.user">
   <div>
     <toolbar></toolbar>
   </div>
-    <div layout="row" layout-align="center center">
-      <div>
-        <div layout="column">
-          <section layout="row">
-            <img class="avatar" src="{{authentication.user.providerData.picture}}" alt="">
-            <h2 class="ini_name">Hola <span ng-bind="authentication.user.firstName"></span></h2>
-          </section>
-          <span class="experiencia"><a href="/#!/articles/edit/{{authentication.user._id}}">Inicia tu Experiencia</a></span>
-        </div>
-        <span>Este año debes sembrar:
-           <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2>  
-        </span>
-      </div>
-      <div hide-xs>
-        <img class="jaguar" src="jaguar.png" alt="">
-      </div>
-    </div>
-    <div>
-      <footer></footer>
-    </div>
+  <div>
+    <timeland></timeland>
+  </div>
+  <div>
+    <footer></footer>
+  </div>
 </section>

@@ -12,7 +12,7 @@ angular.module('huellas')
 			restrict: 'E',
 			templateUrl: '/partials/footer.html',
 		};
-	});
+	})
 
 .directive('timeland', function() {
 		return {
