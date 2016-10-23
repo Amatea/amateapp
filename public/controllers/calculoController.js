@@ -96,9 +96,9 @@ angular.module('huellas')
         $scope.addArbol = function() {
             $scope.article.$update(function(callback) {
                 $timeout (function () {
-                  callback($location.path('/' + $scope.article._id),$window.location.reload()
+                  callback($location.path('/profile'),$window.location.reload()
                   );
-                }, 2200);
+                }, 1000);
                 
             })
             
