@@ -3,11 +3,7 @@ var mongoose = require('mongoose'),
     passportLocalMongoose = require('passport-local-mongoose');
 
 var ArticleSchema = new Schema({
-  creado: {
-    type: Date,
-    default: Date.now
-  },
-
+  
   // cuestionario
   p1: Number,
   p2: Number,
@@ -21,6 +17,7 @@ var ArticleSchema = new Schema({
   p10: Number,
   p11: Number,
   totalTrees: { type: Number, default: '0'},
+  sembrados: { type: Number, default: '0'},
 
   firstName: String,
   lastName: String,
@@ -45,13 +42,9 @@ var ArticleSchema = new Schema({
   },
   providerId: String,
   providerData: {
-    picture: { type: String, default: 'avatar.jpg'}
+    picture: { type: String, default: 'img/account_circle_48px.svg' }
   },
-  created: {
-    type: Date,
-    //Crear un valor 'created' por defecto
-    default: Date.now
-  }
+  created: { type: Date, default: Date.now }
 });
 
 // Configurar la propiedad virtual 'fullname'

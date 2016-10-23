@@ -1,26 +1,51 @@
 <section layout="row">
     <div flex>
-        <md-card ng-repeat="user in articles" layout="column" >
-            <md-card-header >
-            <md-card-title-media>
-                <div class="md-media-md card-media avatar">
-                    <img class="avatar" src="{{user.providerData.picture}}" alt="">
+        <md-card ng-repeat="user in articles | orderBy: '-_id' " layout="column">
+            <div layout="row">
+                <div flex>
+                    <md-card-header>
+                        <md-card-title-media>
+                            <div class="md-media-md card-media avatar2">
+                                <img class="avatar" src="{{user.providerData.picture}}" alt="">
+                            </div>
+                        </md-card-title-media>
+                        <md-card-header-text>
+                            <span class="md-title">{{user.firstName}}</span>
+                            <span class="md-subhead">{{user.username}}</span>
+                        </md-card-header-text>
+                    </md-card-header>
                 </div>
-            </md-card-title-media>
-            <md-card-header-text>
-                <span class="md-title">{{user.firstName}}</span>
-                <span class="md-subhead">subhead</span>
-            </md-card-header-text>
-            </md-card-header>
-            <md-card-title>
-            <md-card-title-text>
-                <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{user.totalTrees}} Árboles</h2>
-            </md-card-title-text>
-            </md-card-title>
+                <div>
+                    <md-card-title>
+                    <md-card-title-text >
+                        <h3 class="card-trees2"><i class="fa fa-pagelines " aria-hidden="true"></i> {{user.totalTrees}} Árboles</h3>
+                        <p class="md-subhead card-trees">Sembrados: {{user.sembrados}}</p>
+                    </md-card-title-text>
+                </md-card-title>
+                </div>
+            </div>
         </md-card>
     </div>
     <div hide show-gt-xs flex>
-        <div>Hello word</div>
-        <md-button class="boton-fixed">HOLA</md-button>
+        <div layout="column" layout-align="center center">
+            <div>
+            <div layout="column">
+                <section layout="row">
+                <img class="avatar" src="{{authentication.user.providerData.picture}}" alt="">
+                <h2 class="ini_name">Hola <span ng-bind="authentication.user.firstName"></span></h2>
+                </section>
+            </div>
+            <span>Este año debes sembrar:
+                <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2>  
+            </span>
+            </div>
+            <div hide-xs>
+            <img class="jaguar" src="jaguar.png" alt="">
+            </div>
+        </div>
     </div>
+    
 </section>
+<a href="/#!/articles/edit/{{authentication.user._id}}"><md-button class="md-accent md-raised md-hue-2 boton-fixed">
+    <i class="fa fa-paw fa-lg" aria-hidden="true"></i> inicia tu experiencia
+</md-button></a>

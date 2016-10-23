@@ -87,6 +87,15 @@ body {
   border-radius: 50%;
   margin-right: 20px;
   margin-top: 30px;
+  
+}
+
+.avatar2 {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: -33px;
 }
 
 .md-avatar {
@@ -222,7 +231,7 @@ body {
 .boton-fixed {
   top: auto;
 right: 20px;
-bottom: 60px;
+bottom: 100px;
 left: auto;
 position: fixed;
 }
@@ -231,10 +240,16 @@ position: fixed;
 position:fixed;
    left:0px;
    bottom:0px;
-   height:30px;
+   height:40px;
    width:100%;
    background:white;
+}
 
+.card-trees {
+  margin-top: -22px;
+}
 
-
+.card-trees2 {
+  margin-top: 0px;
+  color: #00695C;
 }
