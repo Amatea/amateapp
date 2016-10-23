@@ -24,6 +24,9 @@ app.config(['$routeProvider',
 		when('/articles/edit/:articleId', {
 			templateUrl: 'partials/hogar.html'
 		}).
+		when('/profile', {
+			templateUrl: 'partials/profile.html'
+		}).
 		otherwise({
       		redirectTo: '/'
     	});
