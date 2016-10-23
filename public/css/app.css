@@ -245,6 +245,17 @@ position:fixed;
    background:white;
 }
 
+.toolbar-fixed {
+position:fixed;
+   left:0px;
+   top:0px;
+   width:100%;
+}
+
+.timeline {
+  padding-top: 70px;
+}
+
 .card-trees {
   margin-top: -22px;
 }
