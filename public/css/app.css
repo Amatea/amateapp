@@ -264,3 +264,7 @@ position:fixed;
   margin-top: 0px;
   color: #00695C;
 }
+
+.content-padding{
+  padding-top: 60px
+}

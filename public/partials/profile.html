@@ -1,9 +1,10 @@
-<div layout="row" layout-align="center center">
+<toolbar></toolbar>
+<div ng-controller="ExampleController" class="content-padding" layout="row" layout-align="center center">
     <div>
     <div layout="column">
         <section layout="row">
         <img class="avatar" src="{{authentication.user.providerData.picture}}" alt="">
-        <h2 class="ini_name">Hola <span ng-bind="authentication.user.firstName"></span></h2>
+        <h2 class="ini_name"> <span ng-bind="authentication.user.firstName"></span></h2>
         </section>
         <span class="experiencia"><a href="/#!/articles/edit/{{authentication.user._id}}">Inicia tu Experiencia</a></span>
     </div>
