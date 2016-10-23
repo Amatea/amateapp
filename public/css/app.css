@@ -218,3 +218,23 @@ body {
   margin-top: 20px;
   color: rebeccapurple;
 }
+
+.boton-fixed {
+  top: auto;
+right: 20px;
+bottom: 60px;
+left: auto;
+position: fixed;
+}
+
+.footer-fixed {
+position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:white;
+
+
+
+}
