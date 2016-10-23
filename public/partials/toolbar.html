@@ -1,11 +1,12 @@
 <md-toolbar class="toolbar-fixed" layout="row">
+  <div class="md-toolbar-tools">
   <div layout-margin flex>
     <img class="apple_icon" src="icono.png" />
   </div>
-  <a href="#!/profile"><md-button class="md-primary md-raised md-hue-1" layout="center center" flex>
-     <i class="fa fa-user fa-2x" aria-hidden="true"></i> {{authentication.user.username}}
-  </md-button></a>
   <span flex></span>
+  <a href="#!/profile"><md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/account_circle_w_48px.svg"></md-icon>
+        </md-button></a>
   <md-menu>
     <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="More">
       <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
@@ -19,4 +20,5 @@
       </md-menu-item>
     </md-menu-content>
   </md-menu>
+  </div>
 </md-toolbar>
