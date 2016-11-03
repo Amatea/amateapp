@@ -4,9 +4,9 @@ var App = angular.module('App', [
   'ngMaterial', 
   'ngMessages',
   'ngAnimate',
-  'ngAnimate',
   'huellas',
-  'angularMoment'
+  'angularMoment',
+  'angular-svg-round-progressbar'
   
   ]);
 
