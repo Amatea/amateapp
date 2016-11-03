@@ -39,11 +39,27 @@
                 <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2>  
             </span>
             </div>
+            <round-progress
+            max="16"
+            current="12"
+            color="#45ccce"
+            bgcolor="#eaeaea"
+            radius="100"
+            stroke="20"
+            semi="false"
+            rounded="true"
+            clockwise="false"
+            responsive="false"
+            duration="800"
+            animation="easeInOutQuart"
+            animation-delay="0">
+    </round-progress>
             <div hide-xs>
             <img class="jaguar" src="jaguar.png" alt="">
             </div>
         </div>
     </div>
+    
     
 </section>
 <a href="/#!/articles/edit/{{authentication.user._id}}"><md-button class="md-accent md-raised md-hue-2 boton-fixed">
