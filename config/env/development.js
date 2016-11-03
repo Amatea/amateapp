@@ -1,5 +1,8 @@
 module.exports = {
-  db: 'mongodb://localhost/mean',
+  db: {
+    conn: 'mongodb://localhost/mean',
+    conndendros: 'mongodb://geoUser:cibsolar1609@104.131.122.114:27017/GeoDB'
+  },
   sessionSecret: 'developmentSessionSecret',
   google: {
     clientID: '948861021543-o130rj4k4h6u803ic9fhcmpi15bhhepi.apps.googleusercontent.com',

@@ -48,6 +48,8 @@ module.exports = function() {
   require('../app/routes/indexRoutes')(app);
   require('../app/routes/huellaRoutes')(app);
   
+  var aveService=require('../app/routes/aveRoute');
+  app.use('/api', aveService);
 
   // Configurar el servidor de archivos estáticos
   app.use(express.static('./public'));
