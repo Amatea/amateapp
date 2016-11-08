@@ -12,8 +12,8 @@
         <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2>
         <h3><i class="fa fa-pagelines" aria-hidden="true"></i> Árboles Sembrados:: {{authentication.user.sembrados}}</h3>
         <round-progress
-            max="16"
-            current="12"
+            max="[authentication.user.totalTrees]"
+            current="2"
             color="#45ccce"
             bgcolor="#eaeaea"
             radius="100"
@@ -28,7 +28,7 @@
         </round-progress>
     </span>
     </div>
-    <div hide-xs>
-    <img class="jaguar" src="jaguar.png" alt="">
-    </div>
+    <!--<div hide-xs>
+        <img class="jaguar" src="jaguar.png" alt="">
+    </div>-->
 </div>

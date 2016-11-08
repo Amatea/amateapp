@@ -27,37 +27,7 @@
         </md-card>
     </div>
     <div hide show-gt-xs flex>
-        <div layout="column" layout-align="center center">
-            <div>
-            <div layout="column">
-                <section layout="row">
-                <img class="avatar" src="{{authentication.user.providerData.picture}}" alt="">
-                <h2 class="ini_name">Hola <span ng-bind="authentication.user.firstName"></span></h2>
-                </section>
-            </div>
-            <span>Este año debes sembrar:
-                <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2>  
-            </span>
-            </div>
-            <round-progress
-            max="16"
-            current="12"
-            color="#45ccce"
-            bgcolor="#eaeaea"
-            radius="100"
-            stroke="20"
-            semi="false"
-            rounded="true"
-            clockwise="false"
-            responsive="false"
-            duration="800"
-            animation="easeInOutQuart"
-            animation-delay="0">
-    </round-progress>
-            <div hide-xs>
-            <img class="jaguar" src="jaguar.png" alt="">
-            </div>
-        </div>
+        <profile></profile>
     </div>
     
     

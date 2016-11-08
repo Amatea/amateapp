@@ -19,4 +19,11 @@ angular.module('huellas')
 			restrict: 'E',
 			templateUrl: '/partials/timeland.html',
 		};
+	})
+
+	.directive('profile', function() {
+		return {
+			restrict: 'E',
+			templateUrl: '/partials/profile.html',
+		};
 	});
