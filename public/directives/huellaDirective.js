@@ -26,4 +26,11 @@ angular.module('huellas')
 			restrict: 'E',
 			templateUrl: '/partials/profile.html',
 		};
+	})
+
+	.directive('profiter', function() {
+		return {
+			restrict: 'E',
+			templateUrl: '/partials/profile-footer.html',
+		};
 	});

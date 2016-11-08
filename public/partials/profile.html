@@ -1,20 +1,24 @@
 <toolbar></toolbar>
 <div ng-controller="ExampleController" class="content-padding" layout="row" layout-align="center center">
-    <div>
-    <div layout="column">
+<div layout="column">
+    <div layout="column" class="info">
         <section layout="row">
-        <img class="avatar" src="{{authentication.user.providerData.picture}}" alt="">
-        <h2 class="ini_name"> <span ng-bind="authentication.user.firstName"></span></h2>
+            <img class="avatar" src="{{authentication.user.providerData.picture}}" alt="">
+            <div>
+                <h2 class="ini_name info-name"> <span ng-bind="authentication.user.firstName"></span></h2>
+                <h4 class="info-uname"> <span  ng-bind="authentication.user.username"></span></h4>
+            </div>
         </section>
-        <span class="experiencia"><a href="/#!/articles/edit/{{authentication.user._id}}">Inicia tu Experiencia</a></span>
+        <md-button class="experiencia md-raised md-accent md-hue-2" ng-href="/#!/articles/edit/{{authentication.user._id}}">
+            <i class="fa fa-paw" aria-hidden="true"></i> Mi Huella
+        </md-button>
     </div>
-    <span>Este año debes sembrar:
-        <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2>
-        <h3><i class="fa fa-pagelines" aria-hidden="true"></i> Árboles Sembrados:: {{authentication.user.sembrados}}</h3>
+
+    <div layout="column">
         <round-progress
             max="[authentication.user.totalTrees]"
             current="2"
-            color="#45ccce"
+            color="#009688"
             bgcolor="#eaeaea"
             radius="100"
             stroke="20"
@@ -26,9 +30,18 @@
             animation="easeInOutQuart"
             animation-delay="0">
         </round-progress>
-    </span>
+        <div class="totalTrees">
+            <h1><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}}</h1><p class="text-a"> Árboles</p>
+        </div>
+        <span></span>
+        <div class="sembrados">
+            <h3><i class="fa fa-pagelines" aria-hidden="true"></i> Sembrados:: {{authentication.user.sembrados}}</h3>
+        </div>
     </div>
+</div> 
+
     <!--<div hide-xs>
         <img class="jaguar" src="jaguar.png" alt="">
     </div>-->
 </div>
+<profiter></profiter>
