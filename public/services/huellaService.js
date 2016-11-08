@@ -27,6 +27,9 @@ app.config(['$routeProvider',
 		when('/profile', {
 			templateUrl: 'partials/profile.html'
 		}).
+		when('/mapa', {
+			templateUrl: 'partials/mapa.html'
+		}).
 		otherwise({
       		redirectTo: '/'
     	});
