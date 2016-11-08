@@ -6,7 +6,8 @@ var App = angular.module('App', [
   'ngAnimate',
   'huellas',
   'angularMoment',
-  'angular-svg-round-progressbar'
+  'angular-svg-round-progressbar',
+  'leaflet-directive'
   
   ]);
 
