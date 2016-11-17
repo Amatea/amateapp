@@ -313,9 +313,13 @@ position:fixed;
 }
 
 .ave-avatar {
-	width: 200px;
-	height: 130px;
+	max-width: 100%;
+  text-align: center;
+}
 
+.tile-footer
+{
+  background-color: #00695C;
 }
 
 audio {
