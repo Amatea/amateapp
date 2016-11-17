@@ -7,4 +7,7 @@ app.controller('ExampleController', ['$scope', 'Authentication', '$window', '$ro
     $scope.authentication = Authentication;
 
     $scope.articles = Articles.query();
+
+    $scope.data=12;
+    $scope.current=2;
   }]);
